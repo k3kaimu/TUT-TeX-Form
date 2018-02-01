@@ -1,0 +1,149 @@
+\documentclass[11pt,dvipdfmx]{jarticle}
+\usepackage{pdffill}
+\usepackage{amssymb}
+
+\def\Date{平成XX年XX月XX日}
+\def\University{豊橋技術科学大学大学院}
+\def\InMastersCourse{\checkmark}
+\def\InProfessionalGraduateSchool{}
+\def\InDoctorsCourse{}
+\def\Department{工学研究科　電気・電子情報工学専攻}
+\def\StudentID{M999999}
+% \def\ScholarshipID{\splitboxes{6mm}{6XX06XXXXXX}}
+\def\ScholarshipID{6XX06XXXXXX}
+\def\Birthday{X年XX月XX日}
+\def\PostalCode{XXX―XXXX}
+\def\PhoneNumber{XXX(XXXX)XXXX}
+\def\Address{愛知県豊橋市XXXX}
+\def\TitleJP{研究課題題目}
+\def\ResearchAbstract{
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+概要はこんな感じで書いていきます．
+}
+\def\IHaveAchievement１{〇}
+\def\IHaveAchievement２{}
+\def\IHaveAchievement３{}
+\def\IHaveAchievement４{〇}
+\def\IHaveAchievement５{〇}
+\def\IHaveAchievement６{〇}
+\def\IHaveAchievement７{〇}
+\def\IHaveAchievement８{〇}
+\def\IHaveAchievement９{}
+\def\IHaveAchievement１０{}
+\def\AchievementsAbstract{
+業績の要旨はこんな感じで書いていきます．
+業績の要旨はこんな感じで書いていきます．
+業績の要旨はこんな感じで書いていきます．
+業績の要旨はこんな感じで書いていきます．
+業績の要旨はこんな感じで書いていきます．
+業績の要旨はこんな感じで書いていきます．
+業績の要旨はこんな感じで書いていきます．
+業績の要旨はこんな感じで書いていきます．
+}
+\def\IHaveSubmittedPledge{\checkmark}
+\def\IHaveNotSubmittedPledge{}
+\def\IWillSubmitPledgeOn{平成　　年　　月}
+\def\IHaveDoneProcedure{\checkmark}
+\def\IHaveNotDoneProcedure{}
+\def\IWillDoProcedure{}
+\def\IWillDoProcedureOn{平成　　年　　月}
+\def\ReasonForRecommendation{
+申請者である～君は優秀で～～．
+}
+
+
+\begin{document}
+% 下の一行をコメントアウトするとグリッド等が無くなる
+\pfdefaultoption{grid,draft}
+
+% 1ページ目
+\pdffill[page=1]{pdf/29henkanshinsei}{
+\fontsize{11pt}{7mm}\selectfont
+
+% 日付
+\pfnode[left] (19.75, 27.45) {\Date}
+
+% 大学院名
+\pfnode[right, text width=14.6cm, text centered] (5.2, 22.1) {\University}
+
+% 課程
+\pfnode[right] (5.2, 21.0) {\fontsize{15pt}{0}\selectfont\InMastersCourse}
+\pfnode[right] (10.1, 21.0) {\fontsize{15pt}{0}\selectfont\InProfessionalGraduateSchool}
+\pfnode[right] (15.0, 21.0) {\fontsize{15pt}{0}\selectfont\InDoctorsCourse}
+
+% 研究科名
+\pfnode[right, text width=6.7cm, text centered] (5.2, 19.8) {\Department}
+
+% 学籍番号
+\pfnode[right, text width=4.9cm, text centered] (14.9, 19.8) {\StudentID}
+
+
+% 奨学生番号
+\pfnode[right] (5.2, 18.7) {
+\edef\xArgs{{6mm}{\ScholarshipID}}
+\expandafter\splitboxes\xArgs
+}
+
+% 生年月日
+\pfnode[left] (19.6, 18.7) {\Birthday}
+
+% 郵便番号
+\pfnode[right] (5.6, 17.8) {\PostalCode}
+
+% 電話番号
+\pfnode[right] (13.6, 17.8) {\PhoneNumber}
+
+% 住所
+\pfnode[right] (5.3, 17.0) {\Address}
+
+% 題目
+\pfnode[right] (2.9, 15.0) {\TitleJP}
+
+
+% 概要
+\pfnode[below right, text width=16.7cm, align=justify] (2.9, 14.4) {\ResearchAbstract}
+
+
+% 教育研究活動等の業績
+\pfnode[right] (1.6, 6.7) {\fontsize{32pt}{0}\selectfont\IHaveAchievement１}
+\pfnode[right] (7.7, 6.7) {\fontsize{32pt}{0}\selectfont\IHaveAchievement２}
+\pfnode[right] (13.8, 6.7) {\fontsize{32pt}{0}\selectfont\IHaveAchievement３}
+\pfnode[right] (1.6, 5.4) {\fontsize{32pt}{0}\selectfont\IHaveAchievement４}
+\pfnode[right] (7.7, 5.4) {\fontsize{32pt}{0}\selectfont\IHaveAchievement５}
+\pfnode[right] (13.8, 5.4) {\fontsize{32pt}{0}\selectfont\IHaveAchievement６}
+\pfnode[right] (1.6, 4.1) {\fontsize{32pt}{0}\selectfont\IHaveAchievement７}
+\pfnode[right] (7.7, 4.1) {\fontsize{32pt}{0}\selectfont\IHaveAchievement８}
+\pfnode[right] (13.8, 4.1) {\fontsize{32pt}{0}\selectfont\IHaveAchievement９}
+\pfnode[right] (1.6, 2.8) {\fontsize{32pt}{0}\selectfont\IHaveAchievement１０}
+}
+
+
+
+% 2ページ目
+\pdffill[page=2]{pdf/29henkanshinsei}{
+\fontsize{11pt}{6.22mm}\selectfont
+\parindent=11pt
+% 特に優れた業績の要旨
+\pfnode[below right, text width=18cm, align=justify] (1.7, 27.33) {\AchievementsAbstract}
+
+
+\pfnode[right] (3.4, 9.85) {\fontsize{15pt}{0}\selectfont\IHaveSubmittedPledge}
+\pfnode[right] (7.65, 9.85) {\fontsize{15pt}{0}\selectfont\IHaveNotSubmittedPledge}
+\pfnode[right] (8.5, 9.85) {提出予定（{\IWillSubmitPledgeOn}　大学へ提出予定）}
+
+\pfnode[right] (3.4, 7.55) {\fontsize{15pt}{0}\selectfont\IHaveDoneProcedure}
+\pfnode[right] (7.65, 7.55) {\fontsize{15pt}{0}\selectfont\IHaveNotDoneProcedure}
+\pfnode[right] (11.35, 7.55) {\fontsize{15pt}{0}\selectfont\IWillDoProcedure}
+\pfnode[right] (12.2, 7.55) {手続き予定（{\IWillDoProcedureOn}）}
+
+}
+
+\end{document}
