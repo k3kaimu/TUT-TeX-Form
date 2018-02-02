@@ -1,0 +1,123 @@
+\documentclass[11pt,dvipdfmx]{jarticle}
+\usepackage{pdffill}
+
+
+\def\DateJP{平成３０年　１月　９日}
+\def\DateEN{2018/1/9}
+\def\DepartmentJP{電気・電子情報工学専攻}
+\def\DepartmentEN{Electrical and Electronic Information Engineering}
+\def\StudentID{M999999}
+\def\NameJP{天伯　太郎}
+\def\NameEN{Taro Tempaku}
+\def\SupervisorJP{愛知　一郎\\豊橋　次郎}
+\def\SupervisorEN{Taro Aichi\\Jiro Toyohashi}
+\def\TitleJP{ここにタイトル}
+\def\TitleEN{title is here}
+\def\AbstractJP{
+\par
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+このような感じで修論の概要を書いてください．よろしくお願いいたします．
+}
+\def\AbstractEN{
+\par
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+Please write an abstract of the master's thesis as this. Thank you.
+}
+
+\begin{document}
+
+% 下の一行をコメントアウトするとグリッド等が無くなる
+% \pfdefaultoption{grid,draft}
+
+\pdffill{pdf/abstract_jp}{
+    \fontsize{11pt}{0mm}\selectfont
+
+    %日付
+    \pfnode[left, text width=4.55cm, align=right] (19.0, 27.5) {\DateJP}
+
+    % 専攻
+    \pfnode[right, text width=5.15cm, text centered] (2.2, 26.45) {\DepartmentJP}
+
+    % 学籍番号
+    \pfnode[right, text width=1.95cm, text centered] (7.35, 26.45) {学籍番号}
+    \pfnode[right, text width=1.6cm, text centered] (9.3, 26.45) {\StudentID}
+
+    % 申請者氏名
+    \pfnode[right, text width=2.8cm, text centered] (2.2, 25.45) {申請者氏名}
+    \pfnode[right, text width=5.9cm, text centered] (5.0, 25.45) {\NameJP}
+
+    % 指導教員氏名
+    \fontsize{11pt}{7mm}\selectfont
+    \pfnode[right, text width=2.8cm, text centered] (11.65, 25.95) {指導教員氏名}
+    \pfnode[right, text width=4.55cm, text centered] (14.45, 25.95) {\SupervisorJP}
+
+    % "論文要旨（修士）"
+    \pfnode[right, text width=16.8cm, text centered] (2.2, 24.35) {\splitboxes{25pt}{論文要旨}（修士）}
+
+    % 論文題目
+    \pfnode[right, text width=2.35cm, text centered] (2.2, 23.17) {論文題目}
+    \pfnode[right, text width=14.45cm, text centered] (4.55, 23.17) {\TitleJP}
+
+    % 概要本文
+    \fontsize{11pt}{5.3mm}\selectfont
+    \pfnode[below right, text width=16.4cm, align=justify] (2.4, 21.4) {
+    \parindent=11pt
+    \AbstractJP
+    }
+}
+
+
+\pdffill{pdf/abstract_en}{
+    \fontsize{11pt}{0mm}\selectfont
+
+    %日付
+    \pfnode[left, text width=4.55cm, align=right] (19.0, 27.05) {\underline{DATE: \DateEN}}
+
+    % 専攻
+    \pfnode[right, text width=8.6cm] (2.17, 25.45) {Department of\\\DepartmentEN}
+
+    % 学籍番号
+    \pfnode[right, text width=0.75cm, text centered] (10.77, 25.45) {ID}
+    \pfnode[right, text width=1.7cm, text centered] (11.52, 25.45) {\StudentID}
+
+    % 申請者氏名
+    \pfnode[right, text width=2cm, text centered] (2.0, 24.45) {Name}
+    \pfnode[right, text width=9.2cm, text centered] (4.0, 24.45) {\NameEN}
+
+    % 指導教員氏名
+    \fontsize{11pt}{7mm}\selectfont
+    \pfnode[right, text width=2.0cm, text centered] (13.75, 24.95) {Supervisor}
+    \pfnode[right, text width=3.15cm, text centered] (15.75, 24.95) {\SupervisorEN}
+
+    % "Abstract"
+    \pfnode[right, text width=17cm, text centered] (2.0, 22.85) {Abstract}
+
+    %論文題目
+    \pfnode[below right, text width=2.55cm, text centered] (2.0, 22.0) {Title}
+    \pfnode[below right, text width=14.4cm, text centered] (4.55, 22.0) {\TitleEN}
+
+    % 概要本文
+    \fontsize{11pt}{5.2mm}\selectfont
+    \pfnode[below right, text width=16.5cm,align=justify] (2.2, 20.3) {
+    \parindent=11pt
+    \AbstractEN
+    }
+}
+
+\end{document}
