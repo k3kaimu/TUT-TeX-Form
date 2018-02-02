@@ -3,13 +3,13 @@
 \usepackage{amssymb}
 
 \def\Date{平成XX年XX月XX日}
+\def\Name{天伯　太郎}
 \def\University{豊橋技術科学大学大学院}
 \def\InMastersCourse{\checkmark}
 \def\InProfessionalGraduateSchool{}
 \def\InDoctorsCourse{}
-\def\Department{工学研究科　電気・電子情報工学専攻}
+\def\Department{電気・電子情報工学専攻}
 \def\StudentID{M999999}
-% \def\ScholarshipID{\splitboxes{6mm}{6XX06XXXXXX}}
 \def\ScholarshipID{6XX06XXXXXX}
 \def\Birthday{X年XX月XX日}
 \def\PostalCode{XXX―XXXX}
@@ -57,6 +57,11 @@
 \def\IWillDoProcedureOn{平成　　年　　月}
 \def\ReasonForRecommendation{
 申請者である～君は優秀で～～．
+って感じでかいていきます．よろしくお願いいたします。
+申請者である～君は優秀で～～．
+って感じでかいていきます．よろしくお願いいたします。
+申請者である～君は優秀で～～．
+って感じでかいていきます．よろしくお願いいたします。
 }
 
 
@@ -80,7 +85,7 @@
 \pfnode[right] (15.0, 21.0) {\fontsize{15pt}{0}\selectfont\InDoctorsCourse}
 
 % 研究科名
-\pfnode[right, text width=6.7cm, text centered] (5.2, 19.8) {\Department}
+\pfnode[right, text width=6.7cm, text centered] (5.2, 19.8) {工学研究科　\Department}
 
 % 学籍番号
 \pfnode[right, text width=4.9cm, text centered] (14.9, 19.8) {\StudentID}
@@ -143,6 +148,31 @@
 \pfnode[right] (7.65, 7.55) {\fontsize{15pt}{0}\selectfont\IHaveNotDoneProcedure}
 \pfnode[right] (11.35, 7.55) {\fontsize{15pt}{0}\selectfont\IWillDoProcedure}
 \pfnode[right] (12.2, 7.55) {手続き予定（{\IWillDoProcedureOn}）}
+
+}
+
+
+% 3ページ目
+\pdffill[page=3]{pdf/29henkanshinsei}{
+% 奨学生番号
+\pfnode[right] (3.85, 27.0) {
+\edef\xArgs{{6.1mm}{\ScholarshipID}}
+\expandafter\splitboxes\xArgs
+}
+
+% 学籍番号
+\pfnode[right, text width=5.5cm, text centered] (14.3, 27.0) {\StudentID}
+
+% 氏名
+\pfnode[right, text width=6.7cm, text centered] (3.95, 25.8) {\Name}
+
+% 研究科名
+\pfnode[right, text width=5.5cm, text centered] (14.3, 25.8) {工学研究科\\\Department}
+
+\fontsize{11pt}{6.45mm}\selectfont
+\parindent=11pt
+% 推薦理由
+\pfnode[below right, text width=17.9cm, align=justify] (1.7, 25.05) {\ReasonForRecommendation}
 
 }
 
