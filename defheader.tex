@@ -1,0 +1,13 @@
+\usepackage{pythontex}
+
+\begin{pycode}
+import mojimoji
+import yaml
+import sys
+import importlib
+
+pinfo = yaml.load(open("../pinfo.yaml", "r+", encoding='utf-8'))
+\end{pycode}
+
+\newcommand{\ZenToHan}[1]{mojimoji.zen_to_han(u'#1')}
+\newcommand{\HanToZen}[1]{mojimoji.han_to_zen(u'#1')}

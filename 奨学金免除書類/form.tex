@@ -1,20 +1,11 @@
-\documentclass[11pt,dvipdfmx]{jarticle}
+\documentclass[11pt,dvipdfmx]{jsarticle}
 \usepackage{pdffill}
 \usepackage{amssymb}
 
+\input{../defheader}
+
 \def\Date{平成XX年XX月XX日}
-\def\Name{天伯　太郎}
-\def\University{豊橋技術科学大学大学院}
-\def\InMastersCourse{\checkmark}
-\def\InProfessionalGraduateSchool{}
-\def\InDoctorsCourse{}
-\def\Department{電気・電子情報工学専攻}
-\def\StudentID{M999999}
 \def\ScholarshipID{6XX06XXXXXX}
-\def\Birthday{X年XX月XX日}
-\def\PostalCode{XXX―XXXX}
-\def\PhoneNumber{XXX(XXXX)XXXX}
-\def\Address{愛知県豊橋市XXXX}
 \def\TitleJP{研究課題題目}
 \def\ResearchAbstract{
 概要はこんな感じで書いていきます．
@@ -67,7 +58,7 @@
 
 \begin{document}
 % 下の一行をコメントアウトするとグリッド等が無くなる
-% \pfdefaultoption{grid,draft}
+\pfdefaultoption{grid,draft}
 
 % 1ページ目
 \pdffill[page=1]{pdf/29henkanshinsei}{
@@ -77,37 +68,32 @@
 \pfnode[left] (19.75, 27.45) {\Date}
 
 % 大学院名
-\pfnode[right, text width=14.6cm, text centered] (5.2, 22.1) {\University}
-
-% 課程
-\pfnode[right] (5.2, 21.0) {\fontsize{15pt}{0}\selectfont\InMastersCourse}
-\pfnode[right] (10.1, 21.0) {\fontsize{15pt}{0}\selectfont\InProfessionalGraduateSchool}
-\pfnode[right] (15.0, 21.0) {\fontsize{15pt}{0}\selectfont\InDoctorsCourse}
+\pfnode[right, text width=14.6cm, text centered] (5.2, 22.1) {\py{pinfo["大学"]}大学院}
 
 % 研究科名
-\pfnode[right, text width=6.7cm, text centered] (5.2, 19.8) {工学研究科　\Department}
+\pfnode[right, text width=6.7cm, text centered] (5.2, 19.8) {工学研究科　\py{pinfo["所属"]}}
 
 % 学籍番号
-\pfnode[right, text width=4.9cm, text centered] (14.9, 19.8) {\StudentID}
+\pfnode[right, text width=4.9cm, text centered] (14.9, 19.8) {\py{mojimoji.han_to_zen(pinfo["学籍番号"])}}
 
 
 % 奨学生番号
-\pfnode[right] (5.2, 18.7) {
-\edef\xArgs{{6mm}{\ScholarshipID}}
+\pfnode[right] (5.0, 18.7) {
+\edef\xArgs{{6.1mm}{\ScholarshipID}}
 \expandafter\splitboxes\xArgs
 }
 
 % 生年月日
-\pfnode[left] (19.6, 18.7) {\Birthday}
+\pfnode[left] (19.6, 18.7) {\py{'{0}年{1}月{2}日'.format(int(pinfo["生年月日"][0])-1988, pinfo["生年月日"][1], pinfo["生年月日"][2])}}
 
 % 郵便番号
-\pfnode[right] (5.6, 17.8) {\PostalCode}
+\pfnode[right] (5.6, 17.8) {\py{mojimoji.han_to_zen(pinfo["郵便番号"])}}
 
 % 電話番号
-\pfnode[right] (13.6, 17.8) {\PhoneNumber}
+\pfnode[right] (13.6, 17.8) {\py{mojimoji.han_to_zen(pinfo["電話番号"])}}
 
 % 住所
-\pfnode[right] (5.3, 17.0) {\Address}
+\pfnode[right] (5.3, 17.0) {\py{pinfo["住所"]}}
 
 % 題目
 \pfnode[right] (2.9, 15.0) {\TitleJP}
@@ -161,13 +147,13 @@
 }
 
 % 学籍番号
-\pfnode[right, text width=5.5cm, text centered] (14.3, 27.0) {\StudentID}
+\pfnode[right, text width=5.5cm, text centered] (14.3, 27.0) {\py{mojimoji.han_to_zen(pinfo["学籍番号"])}}
 
 % 氏名
-\pfnode[right, text width=6.7cm, text centered] (3.95, 25.8) {\Name}
+\pfnode[right, text width=6.7cm, text centered] (3.95, 25.8) {\py{pinfo["姓"]}　\py{pinfo["名"]}}
 
 % 研究科名
-\pfnode[right, text width=5.5cm, text centered] (14.3, 25.8) {工学研究科\\\Department}
+\pfnode[right, text width=5.5cm, text centered] (14.3, 25.8) {工学研究科\\\py{pinfo["所属"]}}
 
 \fontsize{11pt}{6.45mm}\selectfont
 \parindent=11pt
