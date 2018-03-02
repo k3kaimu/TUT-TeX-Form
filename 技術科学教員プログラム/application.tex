@@ -1,0 +1,138 @@
+\documentclass[11pt,dvipdfmx]{jarticle}
+\usepackage[deluxe]{otf}% 多書体設定を使う
+\usepackage{plext}
+\usepackage{pxrubrica}
+\usepackage{pdffill}
+
+\input{../defheader}
+
+\def\申請理由{
+\par
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+申請理由は．．．．．です．申請理由は．．．．．です．申請理由は．．．．．です．
+}
+\def\ResearchInfo{
+無線通信，特に帯域内全二重通信におけるディジタル自己干渉キャンセラについての研究
+}
+\def\教育原論{〇}
+\def\教育心理学{〇}
+\def\教育方法論{〇}
+\def\生徒指導方法の理論と方法{〇}
+\def\教育相談の理論と方法{〇}
+\def\機関{奈良高専}
+\def\時期{未定}
+
+\def\推薦理由{
+\par
+〜君を推薦します．
+推薦する理由は．．．．．です．
+〜君を推薦します．
+推薦する理由は．．．．．です．
+〜君を推薦します．
+推薦する理由は．．．．．です．
+〜君を推薦します．
+推薦する理由は．．．．．です．
+〜君を推薦します．
+推薦する理由は．．．．．です．
+〜君を推薦します．
+推薦する理由は．．．．．です．
+}
+
+
+\begin{document}
+
+% 下の一行をコメントアウトするとグリッド等が無くなる
+% \pfdefaultoption{grid,draft}
+
+\pdffill[page=1]{pdf/application}{
+    \fontsize{11pt}{0mm}\selectfont
+
+    {\sffamily\gtfamily
+        % 氏名
+        \pfnode[right, text width=7.3cm, align=justify, text centered] (5.2, 24.7)
+        {{\rubysizeratio{0.8} \py{'\\ruby[g]{{{0[姓]}}}{{{0[セイ]}}}　\\ruby[g]{{{0[名]}}}{{{0[メイ]}}}'.format(pinfo)} }}
+
+        % 学籍番号
+        \pfnode[right, text width=4.2cm, align=justify, text centered] (15.2, 24.7)
+        {\py{mojimoji.han_to_zen(pinfo["学籍番号"])}}
+
+        % 所属専攻
+        \pfnode[right, text width=7.3cm, align=justify, text centered] (5.2, 23.1)
+        {\py{pinfo["所属"]}　\py{mojimoji.han_to_zen(pinfo["学年"])}年}
+
+        % 指導教員名
+        \pfnode[right, text width=4.2cm, align=justify, text centered] (15.2, 23.1)
+        {\py{pinfo["指導教員"][0].replace(' ', '　')}}
+
+        % 郵便番号
+        \pfnode[right] (5.8, 21.9)
+        {\py{mojimoji.han_to_zen(pinfo["郵便番号"])}}
+
+        % 住所
+        \pfnode[below right, text width=14cm, align=justify] (5.4, 21.6) {\py{pinfo["住所"]}}
+
+        % 電話番号
+        \pfnode[right] (5.8, 19.7) {\py{mojimoji.han_to_zen(pinfo["電話番号"].split('-')[0])}}
+        \pfnode[right] (7.2, 19.7) {\py{mojimoji.han_to_zen(pinfo["電話番号"].split('-')[1])}}
+        \pfnode[right] (9.4, 19.7) {\py{mojimoji.han_to_zen(pinfo["電話番号"].split('-')[2])}}
+
+        % メール
+        \pfnode[right] (13.8, 19.7) {\py{pinfo["email"]}}
+    }
+
+    % 申請理由
+    \fontsize{11pt}{6.5mm}\selectfont
+    \pfnode[below right, text width=17.1cm, align=justify] (2.2, 16.6) {
+    \parindent=11pt
+    \申請理由
+    }
+
+    % 研究内容
+    \fontsize{11pt}{5.2mm}\selectfont
+    \pfnode[below right, text width=12.6cm, align=justify] (6.7, 3.8) {
+    \parindent=11pt
+    \ResearchInfo
+    }
+}
+
+
+\pdffill[page=2]{pdf/application}{
+    \fontsize{11pt}{0mm}\selectfont
+
+    % 科目選択
+    {\fontsize{22pt}{0}\selectfont
+    \pfnode[right] (6.5, 26.1) {\教育原論}
+    \pfnode[right] (10.0, 26.1) {\教育心理学}
+    \pfnode[right] (13.9, 26.1) {\教育方法論}
+    \pfnode[right] (6.5, 24.9) {\生徒指導方法の理論と方法}
+    \pfnode[right] (6.5, 24.2) {\教育相談の理論と方法}
+    }
+
+    % 機関・時期
+    {\sffamily\gtfamily
+        \pfnode[right, text width=11.5cm, text centered] (8.0, 23.0) {\機関}
+
+        \pfnode[right, text width=11.5cm, text centered] (8.0, 19.8) {\時期}
+    }
+
+    % 指導教員の推薦
+    \fontsize{11pt}{6.5mm}\selectfont
+    \pfnode[below right, text width=17.1cm, align=justify] (2.2, 18.5) {
+    \parindent=11pt
+    \推薦理由
+    }
+
+    {\sffamily\gtfamily
+        \pfnode[right, text width=3.6cm, text centered] (14.4, 12.25) {\py{pinfo["指導教員"][0]}}
+    }
+}
+
+\end{document}
